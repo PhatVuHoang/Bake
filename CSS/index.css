@@ -1,0 +1,661 @@
+/* GLOBAL */
+html,
+body {
+  font-family: "Montserrat", sans-serif;
+  /* 1rem = 18px */
+  /* font-size: 18px; */
+  /* nếu không khai báo mặc định 1rem = 16px */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* HEADER */
+header {
+  background-color: #4e2a84;
+  padding: 30px 0;
+  /* postion: fixed, absolute: làm mất kích thước thẻ */
+  position: fixed;
+  /* z-index: chỉ đi chung với position */
+  z-index: 100;
+  width: 100%;
+}
+header ul {
+  /* xóa dấu tròn của danh sách */
+  list-style: none;
+}
+
+header ul a {
+  /* xóa gạch dưới của thẻ a */
+  text-decoration: none;
+  color: white;
+  margin: 0 20px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+header li {
+  display: inline;
+}
+
+.header__content {
+  /* canh giữa nội dung của một phần chính, căn giữa theo chiều ngang */
+  width: 70%;
+  margin: 0 auto;
+  /* Chỉnh các thẻ con thì khai báo ở thẻ cha gần nhất */
+  display: flex;
+  /* thêm khoảng cách trái phải cho các thẻ con của flex */
+  justify-content: space-around;
+  /* căn chỉnh nội dung của thẻ con theo trục dọc */
+  align-items: center;
+}
+
+.header__content p {
+  color: white;
+  /* rem: thường dùng cho font-size */
+  /* font-size: 37px; */
+  /* rem cho spacing (margin, padding) của vùng chữ đang dùng rem */
+  font-size: 2.056rem;
+}
+
+/* CAROUSEL */
+.carousel {
+  background-image: url(./../IMG/b3.jpg);
+  height: 800px;
+  background-size: cover;
+  background-position: center;
+  /* căn giữa thẻ con của flex (chỉ dùng khi flex có 1 thẻ con) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel h1 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 3.5em;
+  letter-spacing: 3px;
+}
+.carousel__content {
+  color: white;
+  text-align: center;
+}
+
+.carousel__content p {
+  color: #e0e0e0;
+  padding: 23px 0;
+  color: #e0e0e0;
+}
+
+.carousel button {
+  background-color: #ff0e83;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 13px 32px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s;
+  letter-spacing: 1px;
+}
+
+.carousel button:hover{
+  background-color: #fff;
+  color: #000;
+}
+
+/* INTRO */
+.intro {
+  display: grid;
+  /* nếu có số thẻ con chiếm số hàng nhiều thì khai báo thêm hàng */
+  /* mặc định chỉ cần khai báo cột */
+  /* khai báo cột */
+  /* grid-template-columns: 100px 250px 150px 25px; dùng khi kích thước các cột khác nhau*/
+  /* grid-template-rows: ; khai báo hàng*/
+  /* grid-template-columns: repeat(4,25%); dùng để lặp lại các kích thước giống nhau */
+  /* fr: phân số */
+  grid-template-columns: repeat(
+    4,
+    1fr
+  ); /*=> Kích thước mỗi cột là 1/4 (chỉ dùng khi đi chung với grit)*/
+}
+
+.intro__ab1 {
+  /* đường bắt đầu / đường kết thúc của nội dung thẻ con */
+  /* grid-column: 2 / 4; */
+  /* đường bắt đầu / số lượng cột cần chiếm */
+  grid-column: 2 / span 2;
+}
+
+.intro__best {
+  grid-column: 1 / span 2;
+}
+
+.intro__ab4 {
+  grid-column: 3 / span 2;
+}
+
+.intro__item img {
+  width: 100%;
+  display: block;
+  height: 100%;
+}
+
+.intro .intro__item:first-child {
+  background-color: rebeccapurple;
+  color: white;
+}
+
+.intro .intro__item:nth-child(3) {
+  background-color: #ff0e83;
+  color: white;
+}
+
+.intro .intro__item:nth-child(4) {
+  background-color: #ed6498;
+}
+
+.intro .intro__item:nth-child(6) {
+  background-color: #836eaa;
+}
+
+.intro .intro__item:nth-child(8) {
+  background-color: #4e2a84;
+}
+
+.intro__item {
+  display: flex;
+  align-items: center;
+  /* chỉ dùng được khi thẻ cha còn chổ trống */
+  justify-content: center;
+}
+
+.intro__text {
+  /* thu nhỏ nội dung của thẻ con giúp thẻ cha có chổ trống */
+  width: 70%;
+  /* margin: auto; */
+  text-align: center;
+  color: white;
+}
+
+.intro__text h3 {
+  font-size: 30px;
+}
+
+.intro__text p {
+  color: #c1c1c1;
+}
+
+/* NUMBER */
+.number {
+  padding: 70px 0;
+}
+
+.number__content {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  font-weight: bold;
+}
+
+.number__item p:first-child {
+  font-size: 32px;
+  color: #4e2a84;
+}
+
+.number__item p:last-child {
+  font-size: 23px;
+}
+
+.number__item {
+  width: 25%;
+}
+
+/* SERVICE */
+.service {
+  text-align: center;
+  padding: 70px 0;
+  background-image: url(./../IMG/s1.jpg);
+  background-size: cover;
+  height: 650px;
+}
+.service h2 {
+  text-align: center;
+  color: white;
+  font-size: 50px;
+  margin: 70px 0;
+}
+.service__content {
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+}
+.service__item {
+  padding: 0 15px;
+}
+
+.service__item i {
+  font-size: 3rem;
+  color: #4e2a84;
+  background-color: white;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #4e2a84;
+  border-radius: 50%;
+  /* căn icon ở giữa theo chiều ngang
+        text-align: center; */
+  /* căn icon ở giữa theo chiều dọc, khi cho line-height bằng hoặc gần bằng height */
+  /* chỉ áp dụng với icon hoặc text có 1 dòng chữ duy nhất */
+  line-height: 100px;
+  /* transition-property: color; */
+  /* 1s = 1000ms */
+  /* chuyển màu chậm bao nhiêu giây hoặc milisecond */
+  /* transition-duration: 0.5s; */
+  /* 
+  chờ khoảng bao nhiêu giây thì mới thực hiện hover
+  transition-delay: ; 
+  */
+  /* transition: property duration delay; */
+  transition: 0.5s;
+}
+/* thẻ cha được hover, thẻ con được thay đổi */
+.service__item:hover i {
+  color: #ff0e83;
+}
+/* chưa rê chuột (hover) */
+.service__item button {
+  padding: 12px 27px;
+  background-color: #ff0e83;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  /* khoảng cách giữa các kí tự chữ */
+  letter-spacing: 1px;
+  /* biến trỏ chuột thành hình bàn tay */
+  cursor: pointer;
+  /* chuyển màu chậm bao nhiêu giây hoặc milisecond */
+  /* transition-duration: 0.5s; */
+  transition: 0.5s;
+}
+/* đã rê chuột (đã hover) */
+.service__item button:hover {
+  background-color: white;
+  color: black;
+  border-color: #ff0e83;
+}
+
+/* GALLERY */
+.gallery {
+  margin: 80px 0;
+}
+.gallery__content {
+  display: grid;
+  /* Mỗi cột có kích thước là 1/4 */
+  grid-template-columns: repeat(4, 1fr);
+  /* thêm khoảng cách giữa các thẻ con của grid */
+  /* grid-gap: 30px; không hỗ trợ trình duyệt của ms */
+  gap: 30px;
+  padding: 0 15px;
+}
+.gallery h2 {
+  text-align: center;
+  padding-bottom: 50px;
+  font-size: 50px;
+  letter-spacing: 3px;
+  font-weight: 600px;
+}
+.gallery__item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.item__g1 {
+  grid-column: 1 / span 2;
+}
+.item__g6 {
+  grid-column: 3 / span 2;
+}
+.gallery__item {
+  position: relative;
+}
+.gallery__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #3084a331;
+  color: white;
+  padding: 40px 30px;
+  text-align: right;
+}
+.gallery__overlay h3 {
+  font-size: 30px;
+}
+/* .gallery__overlay h3::before{
+} */
+.gallery__overlay h3::after {
+  content: ""; /* bắt buộc phải có */
+  display: block;
+  width: 100%;
+  height: 3px;
+  /* bản chất inline không thay đổi được kích thước */
+  background-color: white;
+  margin-top: 10px;
+  transform: translateY(50px);
+  transition: 0.3s;
+  opacity: 0;
+}
+.gallery__overlay:hover h3::after {
+  transform: translateY(0);
+  transition: 0.3s;
+  opacity: 1;
+}
+.gallery__overlay p {
+  position: absolute;
+  bottom: 40px;
+  right: 30px;
+}
+/* chưa hover */
+.gallery__overlay h3 {
+  font-size: 30px;
+  transform: translateY(30px);
+  transition: 0.3s;
+}
+/* đã hover */
+.gallery__overlay:hover h3 {
+  transform: translateY(0);
+  transition: 0.3s;
+}
+
+.gallery__overlay p {
+  transform: translateY(50px);
+  transition: 0.3s;
+  opacity: 0;
+}
+.gallery__overlay:hover p {
+  transform: translateY(0px);
+  transition: 0.3s;
+  opacity: 1;
+}
+
+/* TEAM */
+.team {
+  background-color: #4e2a84;
+  padding: 50px 0;
+}
+.team h2 {
+  text-align: center;
+  color: white;
+  padding: 40px 0;
+  font-size: 60px;
+}
+.team__content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 70%;
+  margin: auto;
+  gap: 20px 30px;
+}
+
+.team__item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.team__item {
+  position: relative;
+}
+
+.team__pink {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ff0e83;
+  color: white;
+  padding: 30px;
+  opacity: 1;
+  transition: 0.5s;
+}
+.team__item:hover .team__pink {
+  opacity: 0;
+  transition: 0.5s;
+}
+.team__black {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  opacity: 0;
+  transition: 0.5s;
+  padding: 100px 40px;
+}
+
+.team__black h3 {
+  color: #ff0e83;
+  padding: 10px 0;
+}
+
+.team__black p{
+  padding: 10px 0;
+}
+
+.team__item:hover .team__black {
+  opacity: 1;
+  transition: 0.5s;
+}
+/* FEEDBACK */
+.feedback {
+  padding: 70px 0;
+  background-image: url(./../IMG/cc1.jpg);
+  height: 470px;
+  background-size: cover;
+}
+.feedback h2 {
+  text-align: center;
+  padding: 50px 0;
+  font-size: 50px;
+  color: white;
+}
+.feedback__content {
+  width: 70%;
+  margin: auto;
+  border: 5px solid #ff0e83;
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.493);
+}
+.feedback__content p {
+  padding: 10px 0;
+  letter-spacing: 2px;
+}
+.feedback__content p:last-child {
+  color: white;
+  font-weight: bold;
+}
+.feedback__content i {
+  color: deepskyblue;
+  font-size: 20px;
+}
+.feedback .owl-theme .owl-dots .owl-dot span {
+  background-color: rgba(0, 0, 0, 0.507);
+}
+.feedback .owl-theme .owl-dots .owl-dot.active span {
+  background-color: black;
+}
+
+.feedback .owl-theme .owl-dots .owl-dot:hover span {
+  background-color: black;
+}
+
+/* CONTACT */
+
+.contact h2 {
+  text-align: center;
+  padding: 50px 0;
+  font-size: 50px;
+  /* color: white; */
+}
+.contact__form form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 70%;
+  margin: auto;
+  gap: 20px 20px;
+}
+.contact__form textarea {
+  font-size: 15px;
+  grid-column: 1 / span 2;
+  /* tắt tính năng resize của text-aria */
+  resize: none;
+  padding: 1em;
+  letter-spacing: 1px;
+}
+.contact__form button {
+  grid-column: 1 / span 2;
+  background-color: #ff0e83;
+  padding: 10px 0;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  border: 1px solid #ff0e83;
+}
+.contact__form button:hover {
+  color: white;
+  background-color: black;
+  transition: 0.5s;
+  border: 1px solid black;
+}
+.contact__form input {
+  font-size: 15px;
+  /* 1em = 15px */
+  padding: 1em;
+  transition: 0.5s;
+  border: 1px solid black;
+  border-radius: 5px;
+  letter-spacing: 1px;
+}
+.contact__form input:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.contact__form textarea::placeholder {
+  color: #ff0e83;
+}
+.contact__map {
+  margin: 70px 0;
+}
+.contact__map iframe {
+  width: 100%;
+  height: 300px;
+}
+.contact__video iframe {
+  width: 100%;
+}
+
+.contact__social {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.contact__social i {
+  font-size: 28px;
+  color: #4e2a84;
+  margin-bottom: 20px;
+}
+
+.contact__social p {
+  letter-spacing: 2px;
+  padding: 5px 0;
+}
+
+/* FOOTER */
+
+footer{
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #111;
+  color: #fff;
+  padding: 70px 100px 20px 100px;
+}
+
+footer .footer__item{
+  padding: 0 30px;
+}
+
+footer .footer__item h3{
+  color: #ff0e83;
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+footer .footer__item p {
+  margin: 10px 0;
+}
+
+footer .footer__item input {
+  outline: none;
+  padding: 0.7em;
+  border: 1px solid #000;
+  font-size: 13px;
+  width: 100%;
+  background: rgb(255, 255, 255);
+  letter-spacing: 1px;
+}
+
+footer .footer__item button{
+  color: #000;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+  border: 2px solid #ff0e83;
+  background: #ff0e83;
+  cursor: pointer;
+  padding: 0.4em 1em;
+  width: 30%;
+  margin-top: 10px;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+footer .footer__item button:hover{
+  background: #fff;
+  border: 2px solid #000;
+}
+
+.copyright {
+  text-align: center;
+  color: #fff;
+  background: #111;
+  padding-bottom: 20px;
+}
+
+/* BACK TO TOP */
+.backToTop {
+  position: fixed;
+  z-index: 999;
+  bottom: 20px;
+  right: 30px;
+  visibility: hidden;
+  /* opacity: 0; */
+}
+.backToTop img{
+  width: 40px;
+  height: 40px;
+}
+.cd-top--is-visible { 
+  visibility: visible;
+  /* opacity: 1; */
+}
